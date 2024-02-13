@@ -474,7 +474,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 #intro {
   width: 100%;
   height: 100vh;
-  background: url(../img/b5.jpeg) top center;
+  background: url(../img/event-bg3.jpg) top center;
   background-size: cover;
   overflow: hidden;
   position: relative;
@@ -482,7 +482,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #intro:before {
   content: "";
-  background: rgba(6, 12, 34, 0.8);
+  background: rgba(6, 12, 34, 0.5);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -515,10 +515,11 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #intro h1 {
   color: #fff;
+  /* color: #f82249; */
   font-family: "Raleway", sans-serif;
-  font-size: 56px;
+  font-size: 50px;
   font-weight: 600;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 
 #intro h1 span {
@@ -531,15 +532,6 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-size: 20px;
 }
 
-#intro .play-btn {
-  width: 94px;
-  height: 94px;
-  background: radial-gradient(#f82249 50%, rgba(101, 111, 150, 0.15) 52%);
-  border-radius: 50%;
-  display: block;
-  position: relative;
-  overflow: hidden;
-}
 
 #intro .play-btn::after {
   content: '';
@@ -700,19 +692,39 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 /*--------------------------------------------------------------
-# Speakers Section
+# Themes Section
 --------------------------------------------------------------*/
 
 #speakers {
   padding: 60px 0 30px 0;
+  
 }
-
+.img-fluid1{
+  background-repeat: no-repeat;
+  /* background-size: cover; */
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
 #speakers .speaker {
   position: relative;
   overflow: hidden;
-  margin-bottom: 30px;
-}
+  /* margin-bottom: 30px; */
+  height: calc(100% - 30px);
 
+}
+.details h3{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.details h4 {
+  color: #000;
+  font-weight: 400;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.details ul span{
+  color: crimson;
+} 
 #speakers .speaker .details {
   background: rgba(6, 12, 34, 0.76);
   position: absolute;
@@ -726,6 +738,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #speakers .speaker .details h3 {
   color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 5px;
@@ -795,7 +808,9 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-size: 15px;
   margin-bottom: 10px;
 }
-
+.section-header h2{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 /*--------------------------------------------------------------
 # Schedule Section
 --------------------------------------------------------------*/
@@ -1058,7 +1073,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #gallery .gallery-carousel .center {
-  border: 6px solid #f82249;
+  border: 3px solid #f82249;
+  border-radius: 10px;
   margin: -10px;
   box-sizing: content-box;
   padding: 4px;
