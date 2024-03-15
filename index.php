@@ -144,7 +144,7 @@
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
               </div>
-              <p>Near Paras Super Market</p>
+              <p>Near Paras Super Market Collage road</p>
             </div>
           </div>
 
@@ -314,7 +314,7 @@
                   <li><span class="fa-li"><i class="fa fa-check"></i></span>Decorations</li>
                   <li><span class="fa-li"><i class="fa fa-check"></i></span>Cake</li>
                   <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>Food</li>
-                  <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>Soft Drinks</li>
+                  <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>Cold-Drinks</li>
                   <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>Photo Shoot</li>
                 </ul>
                 <hr>
@@ -335,7 +335,7 @@
                   <li><span class="fa-li"><i class="fa fa-check"></i></span>decorations</li>
                   <li><span class="fa-li"><i class="fa fa-check"></i></span>Cake</li>
                   <li><span class="fa-li"><i class="fa fa-check"></i></span>Food</li>
-                  <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>Soft Drinks</li>
+                  <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>Cold-Drinks</li>
                   <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>Photo Shoot</li>
                 </ul>
                 <hr>
@@ -357,7 +357,7 @@
                   <li><span class="fa-li"><i class="fa fa-check"></i></span>decorations</li>
                   <li><span class="fa-li"><i class="fa fa-check"></i></span>Cake</li>
                   <li><span class="fa-li"><i class="fa fa-check"></i></span>Food</li>
-                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Soft Drinks</li>
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Cold-Drinks</li>
                   <li><span class="fa-li"><i class="fa fa-check"></i></span>Photo Shoot</li>
                 </ul>
                 <hr>
