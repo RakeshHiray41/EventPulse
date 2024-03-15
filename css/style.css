@@ -1558,6 +1558,69 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-size: 13px;
   color: #ddd;
 }
+/*-------------------------------------------------------------
+#Booking page
+--------------------------------------------------------------*/
+.book{
+  /* height: 100vh; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fcfdff;
+
+}
+.book .container{
+      /* margin-top: 200px; */
+      /* border:1px solid rgb(12, 15, 57); */
+      /* border-radius: 10px; */
+      /* height: calc(100% - 200px); */
+      /* padding: 5px; */
+      margin-top: 200px;
+      overflow: auto;
+}
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin: 4px;
+}
+
+.info p input{
+  border: 1px solid gray;
+  border-radius: 3px ;
+  cursor: pointer;
+
+}
+.form1{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  height: 400px;
+}
+
+.left {
+
+  width: 40%;
+  height: 100%;
+}
+.right{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  flex-wrap: wrap;
+  width: 60%;
+
+}
+.right .form-group input{
+
+  margin:0px;
+
+}
+
 
 /*--------------------------------------------------------------
 # Responsive Media Queries
@@ -1567,6 +1630,9 @@ body.mobile-nav-active #mobile-nav-toggle {
   #subscribe input {
     min-width: 400px;
   }
+
+  
+
 }
 
 @media (min-width: 768px) {
@@ -1574,6 +1640,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   #contact .contact-phone,
   #contact .contact-email {
     padding: 20px 0;
+    
   }
 
   #contact .contact-phone {
@@ -1663,6 +1730,19 @@ body.mobile-nav-active #mobile-nav-toggle {
   #schedule .nav-tabs a {
     padding: 8px 50px;
   }
+  .form1{
+    height: 650px;
+    flex-direction: column;
+    overflow: auto;
+  }
+  .left{
+    height: 50%;
+    width: 100%;
+  }
+  .right{
+    height: 50%;
+    width: 100%;
+  }
 }
 
 @media (max-width: 574px) {
@@ -1681,4 +1761,29 @@ body.mobile-nav-active #mobile-nav-toggle {
   #subscribe button {
     margin-top: 10px;
   }
+}
+
+
+
+/* scroll bar design */
+
+/* width */
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #f8234a;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #0e1b4d;;
 }

@@ -34,29 +34,9 @@
   <!--==========================
     Header
   ============================-->
-  <header id="header">
-    <div class="container">
-
-      <div id="logo" class="pull-left">
-        <!-- Uncomment below if you prefer to use a text logo -->
-        <!-- <h1><a href="#main">C<span>o</span>nf</a></h1>-->
-        <a href="#intro" class="scrollto"><span id="logo">Event<span id="sub-logo">Pulse</span></span></a>
-      </div>
-
-      <nav id="nav-menu-container">
-        <ul class="nav-menu">
-          <li class="menu-active"><a href="#intro">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#speakers">Themes</a></li>
-          <li><a href="#hotels">Cafe</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li class="buy-tickets"><a href="index.html#buy-tickets">Book Event</a></li>
-        </ul>
-      </nav><!-- #nav-menu-container -->
-    </div>
-  </header><!-- #header -->
-
+   <?php 
+      include "header.php"
+   ?>
   <!--==========================
     Intro Section
   ============================-->
@@ -397,21 +377,21 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h4 class="modal-title">Buy Tickets</h4>
+              <h4 class="modal-title">Book Event</h4>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-              <form method="POST" action="#">
+              <form method="POST" action="book.php">
                 <div class="form-group">
-                  <input type="text" class="form-control" name="your-name" placeholder="Your Name">
+                  <input type="text" class="form-control" name="username" placeholder="Your Name">
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control" name="your-email" placeholder="Your Email">
+                  <input type="text" class="form-control" name="email" placeholder="Your Email">
                 </div>
                 <div class="form-group">
-                  <select id="ticket-type" name="ticket-type" class="form-control" >
+                  <select id="ticket-type" name="event-type" class="form-control" >
                     <option value="">-- Select Your Ticket Type --</option>
                     <option value="standard-access">Standard Access</option>
                     <option value="pro-access">Pro Access</option>
@@ -419,7 +399,7 @@
                   </select>
                 </div>
                 <div class="text-center">
-                  <button type="submit" class="btn">Buy Now</button>
+                  <button type="submit" class="btn">Book Now</button>
                 </div>
               </form>
             </div>
@@ -586,6 +566,7 @@
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
+
 </body>
 
 </html>
