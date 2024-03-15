@@ -484,6 +484,7 @@
   <!--==========================
     Footer
   ============================-->
+
   <footer id="footer">
     <div class="footer-top">
       <div class="container">
@@ -547,6 +548,7 @@
       </div>
     </div>
   </footer><!-- #footer -->
+
 
   <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
 

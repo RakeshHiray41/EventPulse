@@ -21,7 +21,7 @@ height: 100vh !important;
 
 
 
-<section class="h-80 h-custom " style="background-color: #8fc4b7;">
+ <section class="h-80 h-custom " style="background-color: #8fc4b7;">
   <div class="container py-5 h-100 ">
     <div class="row d-flex justify-content-center align-items-center mt-5 " >
       <div class="col-lg-10 ">
@@ -35,8 +35,22 @@ height: 100vh !important;
             <form class="px-md-2">
 
               <div class="form-outline mb-4">
-                <input type="text" id="form3Example1q" class="form-control" />
-                <label class="form-label" for="form3Example1q">Name</label>
+              <div class="card mb-5 mb-lg-0">
+                <div class="card-body">
+                  <h5 class="card-title text-muted text-uppercase text-center">Standard Access</h5>
+                  <h6 class="card-price text-center">&#x20B9 150</h6>
+                  <hr>
+                  <ul class="fa-ul">
+                    <li><span class="fa-li"><i class="fa fa-check"></i></span>Cafe</li>
+                    <li><span class="fa-li"><i class="fa fa-check"></i></span>Decorations</li>
+                    <li><span class="fa-li"><i class="fa fa-check"></i></span>Cake</li>
+                    <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>Food</li>
+                    <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>Soft Drinks</li>
+                    <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>Photo Shoot</li>
+                  </ul>
+                  <hr>
+                </div>
+              </div>
               </div>
 
               <div class="row">
