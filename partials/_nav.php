@@ -1,4 +1,3 @@
-
 <?php 
 session_start();
 if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true){
@@ -19,6 +18,7 @@ $password = "1234";
 $connection_string = "host={$host} port={$port} dbname={$dbname} user={$user} password={$password}";
 
 $conn = pg_connect($connection_string);
+
 $sql = "SELECT * FROM sitedetail";
 $result = pg_query($conn, $sql);
 $row = pg_fetch_assoc($result);
@@ -95,15 +95,14 @@ while ($row = pg_fetch_assoc($result)) {
         }
         else {
           echo '
-          <button type="button" class="btn btn-success mx-2"  data-toggle="modal" data-target="#loginModal">Login</button>
-          <a href="login.php">Login1</a>
+          <button type="button" class="btn btn-success mx-2">  <a href="login.php"> Loginasdsa</a> </button>
           <button type="button" class="btn btn-success mx-2"  data-toggle="modal" data-target="#signupModal">SignUp</button>';
         }
             
   echo '</div>
     </nav>';
 
-    include 'partials/_loginModal.php';
+    // include 'partials/_loginModal.php';
     include 'partials/_signupModal.php';
 
     if(isset($_GET['signupsuccess']) && $_GET['signupsuccess']=="true") {

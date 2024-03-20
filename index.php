@@ -35,7 +35,7 @@
     Header
   ============================-->
    <?php 
-      include "header.php"
+      include "header1.php"
    ?>
   <!--==========================
     Intro Section
@@ -210,9 +210,7 @@
       </div>
 
     </section>
-
-
-
+    <!-- <iframe src="http://localhost/EventPulse/index.php" title="description" width="100%" height="100%"></iframe> -->
     <!--==========================
       F.A.Q Section
     ============================-->
@@ -383,7 +381,7 @@
               </button>
             </div>
             <div class="modal-body">
-              <form method="POST" action="book.php">
+              <form method="POST" action="index.php">
                 <div class="form-group">
                   <input type="text" class="form-control" name="username" placeholder="Your Name">
                 </div>
@@ -408,7 +406,12 @@
       </div><!-- /.modal -->
 
     </section>
-
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>         
+    <script src="https://unpkg.com/bootstrap-show-password@1.2.1/dist/bootstrap-show-password.min.js"></script>
     <!--==========================
       Contact Section
     ============================-->
@@ -565,6 +568,11 @@
 
   <!-- Contact Form JavaScript File -->
   <script src="contactform/contactform.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>         
+    <script src="https://unpkg.com/bootstrap-show-password@1.2.1/dist/bootstrap-show-password.min.js"></script>
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
