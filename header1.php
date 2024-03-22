@@ -1,64 +1,101 @@
 
+<?php 
+$username ="";
+ include 'config.php';
+// $systemName = "ABC";
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <title>EventPulse</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="" name="keywords">
-  <meta content="" name="description">
-
-  <!-- Favicons -->
-  <link href="img/logo.png" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
-
-  <!-- Bootstrap CSS File -->
-  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Libraries CSS Files -->
-  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="lib/animate/animate.min.css" rel="stylesheet">
-  <link href="lib/venobox/venobox.css" rel="stylesheet">
-  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-  <!-- Main Stylesheet File -->
-  <link href="css/style.css" rel="stylesheet">
-
-</head>
-
-<body>
-
-  <!--==========================
-    Header
-  ============================-->
-  <header id="header" class="header-fixed">
-    <div class="container">
-
-      <div id="logo" class="pull-left">
-        <!-- Uncomment below if you prefer to use a text logo -->
-        <!-- <h1><a href="#main">C<span>o</span>nf</a></h1>-->
-        <a href="#intro" class="scrollto"><span id="logo">Event<span id="sub-logo">Pulse</span></span></a>
-      </div>
-
-      <nav id="nav-menu-container">
-        <ul class="nav-menu">
-          <li class=""><a href="index.php">Home</a></li>
-          <li><a href="index.php#about">About</a></li>
-          <li><a href="index.php#speakers">Themes</a></li>
-          <li><a href="index.php#hotels">Cafe</a></li>
-          <li><a href="index.php#gallery">Gallery</a></li>
-          <li><a href="index.php#contact">Contact</a></li>
-          <li class="Login"><a href="login.php">Login</a></li>
-          <li class="buy-tickets"><a href="index.php#buy-tickets">Book Event</a></li>
-        
-        </ul>
-      </nav><!-- #nav-menu-container -->
+$loggedin_li = '
+<li class=""><a href="home.php">Home</a></li>
+<li><a href="index.php#about">About</a></li>
+<li><a href="index.php#speakers">Themes</a></li>
+<li><a href="index.php#hotels">Cafe</a></li>
+<li><a href="index.php#gallery">Gallery</a></li>
+<li><a href="index.php#contact">Contact</a></li>
+<li class="nav-item"><a class="nav-link" href="viewOrder.php">Your Orders</a></li>
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"> Welcome ' .$username. '</a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <a style="color:#f82249;"class="dropdown-item" href="partials/_logout.php">Logout</a>
     </div>
-  </header>
-  <!-- #header -->
+</li>
+<li>
+  <div class="image-size-small myimg">
+            <a href="viewProfile.php"><img src="img/person-' .$userId. '.jpg" class="rounded-circle" onError="this.src = \'img/profilePic.jpg\'" style="width:40px; height:40px"></a>
+  </div>
+</li>
+
+';
+
+$not_login_li = '
+<li class=""><a href="index.php">Home</a></li>
+<li><a href="index.php#about">About</a></li>
+<li><a href="index.php#speakers">Themes</a></li>
+<li><a href="index.php#hotels">Cafe</a></li>
+<li><a href="index.php#gallery">Gallery</a></li>
+<li><a href="index.php#contact">Contact</a></li>
+<li class="Login"><a href="login.php">Login</a></li>
+<li ><a id="signup" data-toggle="modal" data-target="#signupModal">SignUp</a></li>
+
+';
+
+echo ' 
+<header id="header" class="header-fixed">
+<div class="container">
+
+  <div id="logo" class="pull-left">
+    <!-- Uncomment below if you prefer to use a text logo -->
+    <!-- <h1><a href="#main">C<span>o</span>nf</a></h1>-->
+     <a href="#intro" class="scrollto"><span id="logo">Event<span id="sub-logo">Pulse</span></span></a>
+  </div>
+
+  <nav id="nav-menu-container">
+    <ul class="nav-menu">
+    
+  ';
+
+
+
+  
+        if($loggedin){
+          echo $loggedin_li;
+        }
+        else {
+          echo $not_login_li;
+        }
+            
+  echo ' </ul>           
+  </div>
+    </nav> </header>';
+
+
+    // include 'partials/_loginModal.php';
+    include 'partials/_signupModal.php';
+
+    if(isset($_GET['signupsuccess']) && $_GET['signupsuccess']=="true") {
+      echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+              <strong>Success!</strong> You can now login.
+              <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span></button>
+            </div>';
+    }
+    if(isset($_GET['error']) && $_GET['signupsuccess']=="false") {
+      echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+              <strong>Warning!</strong> ' .$_GET['error']. '
+              <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span></button>
+            </div>';
+    }
+    if(isset($_GET['loginsuccess']) && $_GET['loginsuccess']=="true"){
+      echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+              <strong>Success!</strong> You are logged in
+              <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span></button>
+            </div>';
+    }
+    if(isset($_GET['loginsuccess']) && $_GET['loginsuccess']=="false"){
+      echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+              <strong>Warning!</strong> Invalid Credentials
+              <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span></button>
+            </div>';
+    }
+?>
+
+
 

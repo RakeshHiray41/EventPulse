@@ -1,8 +1,9 @@
 <?php 
- include 'config.php';
+$username ="harish";
+include 'config.php';
 // $systemName = "ABC";
 
-echo '<nav  class="navbar navbar-expand-lg navbar-dark bg-dark">
+echo '<nav  class="navbar navbar-expand-lg navbar-dark navbar-dark bg-dark">
       <a class="navbar-brand" href="index.php">'.$systemName.'</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -106,8 +107,6 @@ while ($row = pg_fetch_assoc($result)) {
               <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span></button>
             </div>';
     }
-
-    
 ?>
 
 
