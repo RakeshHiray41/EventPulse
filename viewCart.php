@@ -36,6 +36,7 @@
     </style>
 </head>
 <body>
+    
     <?php include 'partials/_dbconnect.php';?>
     <?php require 'partials/_nav.php' ?>
     <?php 
@@ -47,6 +48,30 @@
             <div class="alert alert-info mb-0" style="width: -webkit-fill-available;">
               <strong>Info!</strong> online payment are currently disabled so please choose cash on delivery.
             </div>
+            <?php 
+         if(isset($_GET['info']))
+         {
+            if($_GET['info']==1)
+            {
+                echo '<div class="alert alert-warning  mb-0" role="alert" style="width: -webkit-fill-available;">
+                All Ready Book
+              </div>';
+            }
+            else if($_GET['info']==3)
+            {
+                echo '<div class="alert alert-success  mb-0" role="alert" style="width: -webkit-fill-available;">
+                Available To Book
+              </div>';
+            }
+            else if($_GET['info']==2)
+            {
+                echo '<div class="alert alert-danger  mb-0" role="alert" style="width: -webkit-fill-available;">
+                Please Fill The Proper detail!
+              </div>';
+            }
+         }
+         
+    ?>
             <div class="col-lg-12 text-center border rounded bg-light my-3">
                 <h1>My Cart</h1>
             </div>
@@ -117,7 +142,32 @@
             <div class="col-lg-4">
                 <div class="card wish-list mb-3">
                     <div class="pt-4 border bg-light rounded p-3">
+                    <div class="form-check">
+                        <!-- To do list -->
+                        <form action="check_avilable.php" method="POST">
+                            Event Start Date Time<input class="form-control" type="datetime-local" name="start_date_time" id="start_date_time"><br>
+                            Event End Date Time<input type="datetime-local" class="form-control" name="end_date_time" id="end_date_time">
+                            
+                            <br>
+                            <select class="form-select" name="caffe">
+                                <option >Select Caffe</option>
+                                <?php  
+                                $sql = 'SELECT *  FROM public.caffe_list;';
+                                $result = pg_query($conn, $sql);
+                                while ($row = pg_fetch_assoc($result)) {
+                                    ?><option value="<?php echo $row['caffe_name']; ?>"><?php echo $row['caffe_name']; ?></option>
+                                    <?php
+                                }
+?>
+                            </select>
+                            <hr>
+                            <button type="submit" class="btn btn-primary" name="submit">Check For Avaibility</button>
+
+                        </form>
+                        <hr>
+                    </div>
                         <h5 class="mb-3 text-uppercase font-weight-bold text-center">Order summary</h5>
+                        
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0 bg-light">Total Price<span>Rs. <?php echo $totalPrice ?></span></li>
                             <li class="list-group-item d-flex justify-content-between align-items-center px-0 bg-light">Shipping<span>Rs. 0</span></li>
