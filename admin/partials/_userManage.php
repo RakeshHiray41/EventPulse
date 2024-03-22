@@ -81,7 +81,7 @@ $result = pg_query($conn, $sql);
         if($check !== false) {
             $newfilename = "person-".$id.".jpg";
 
-            $uploaddir = $_SERVER['DOCUMENT_ROOT'].'/EventPulse/img/';
+            $uploaddir = $_SERVER['DOCUMENT_ROOT'].'/img/';
             $uploadfile = $uploaddir . $newfilename;
 
             if (move_uploaded_file($_FILES['userimage']['tmp_name'], $uploadfile)) {
@@ -103,7 +103,7 @@ $result = pg_query($conn, $sql);
     
     if(isset($_POST['removeProfilePhoto'])) {
         $id = $_POST["userId"];
-        $filename = $_SERVER['DOCUMENT_ROOT']."/EventPulse/img/person-".$id.".jpg";
+        $filename = $_SERVER['DOCUMENT_ROOT']."/img/person-".$id.".jpg";
         if (file_exists($filename)) {
             unlink($filename);
             echo "<script>alert('Removed');

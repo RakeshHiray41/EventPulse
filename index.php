@@ -35,7 +35,7 @@
     Header
   ============================-->
    <?php 
-      include "header1.php"
+      include "partials/_nav.php";
    ?>
   <!--==========================
     Intro Section
@@ -210,7 +210,7 @@
       </div>
 
     </section>
-    <!-- <iframe src="http://localhost/EventPulse/index.php" title="description" width="100%" height="100%"></iframe> -->
+    <!-- <iframe src="http://localhost/index.php" title="description" width="100%" height="100%"></iframe> -->
     <!--==========================
       F.A.Q Section
     ============================-->

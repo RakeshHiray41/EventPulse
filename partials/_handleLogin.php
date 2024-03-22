@@ -18,14 +18,14 @@ if ($result) {
             $_SESSION['loggedin'] = true;
             $_SESSION['username'] = $username;
             $_SESSION['userId'] = $userId;
-            header("location: /EventPulse/home.php?loginsuccess=true");
+            header("location: /home.php?loginsuccess=true");
             exit();
         } else {
-            header("location: /EventPulse/home.php?loginsuccess=false");
+            header("location: /home.php?loginsuccess=false");
             exit();
         }
     } else {
-        header("location: /EventPulse/home.php?loginsuccess=false");
+        header("location: /home.php?loginsuccess=false");
         exit();
     }
 } else {

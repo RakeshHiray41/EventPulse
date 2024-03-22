@@ -1,31 +1,8 @@
 <?php 
-session_start();
-if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true){
-  $loggedin= true;
-  $userId = $_SESSION['userId'];
-  $username = $_SESSION['username'];
-}
-else{
-  $loggedin = false;
-  $userId = 0;
-}
-$host = "localhost";
-$port = "5432"; 
-$dbname = "Demo";
-$user = "postgres"; 
-$password = "1234"; 
+ include 'config.php';
+// $systemName = "ABC";
 
-$connection_string = "host={$host} port={$port} dbname={$dbname} user={$user} password={$password}";
-
-$conn = pg_connect($connection_string);
-
-$sql = "SELECT * FROM sitedetail";
-$result = pg_query($conn, $sql);
-$row = pg_fetch_assoc($result);
-
-$systemName = $row['systemName'];
-
-echo '<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+echo '<nav  class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="index.php">'.$systemName.'</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -56,11 +33,11 @@ while ($row = pg_fetch_assoc($result)) {
             <a class="nav-link" href="about.php">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.php">Contact Us</a>
+            <a class="nav-link" href="index.php#contact">Contact Us</a>
           </li>
           
         </ul>
-        <form method="get" action="/EventPulse/search.php" class="form-inline my-2 my-lg-0 mx-3">
+        <form method="get" action="/search.php" class="form-inline my-2 my-lg-0 mx-3">
           <input class="form-control mr-sm-2" type="search" name="search" id="search" placeholder="Search" aria-label="Search" required>
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>';
@@ -95,7 +72,7 @@ while ($row = pg_fetch_assoc($result)) {
         }
         else {
           echo '
-          <button type="button" class="btn btn-success mx-2">  <a href="login.php"> Loginasdsa</a> </button>
+          <button type="button" class="btn btn-success mx-2">  <a href="login.php" type=button style="color:white">   Login </a> </button>
           <button type="button" class="btn btn-success mx-2"  data-toggle="modal" data-target="#signupModal">SignUp</button>';
         }
             
@@ -129,6 +106,8 @@ while ($row = pg_fetch_assoc($result)) {
               <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span></button>
             </div>';
     }
+
+    
 ?>
 
 

@@ -62,7 +62,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $deletesql = "DELETE FROM viewcart WHERE \"userId\" = $1";   
             $deleteresult = pg_query_params($conn, $deletesql, array($userId));
             echo '<script>alert("Thanks for ordering with us. Your order id is ' . $orderId . '.");
-                window.location.href="http://localhost/EventPulse/index.php";  
+                window.location.href="http://localhost/index.php";  
                 </script>';
                 exit();
         } 

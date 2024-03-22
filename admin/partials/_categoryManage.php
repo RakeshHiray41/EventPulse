@@ -20,7 +20,7 @@ $catId=$row["categorieId"];
                 
                 $newfilename = "card-".$catId.".jpg";
 
-                $uploaddir = $_SERVER['DOCUMENT_ROOT'].'/EventPulse/img/';
+                $uploaddir = $_SERVER['DOCUMENT_ROOT'].'/img/';
                 $uploadfile = $uploaddir . $newfilename;
 
                 if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile)) {
@@ -42,7 +42,7 @@ $catId=$row["categorieId"];
     }
     if(isset($_POST['removeCategory'])) {
         $catId = $_POST["catId"];
-        $filename = $_SERVER['DOCUMENT_ROOT']."/EventPulse/img/card-".$catId.".jpg";
+        $filename = $_SERVER['DOCUMENT_ROOT']."/img/card-".$catId.".jpg";
         $sql = "DELETE FROM categories WHERE \"categorieId\"='$catId'";   
 $result = pg_query($conn, $sql);
 
@@ -86,7 +86,7 @@ $result = pg_query($conn, $sql);
             $newName = 'card-'.$catId;
             $newfilename=$newName .".jpg";
 
-            $uploaddir = $_SERVER['DOCUMENT_ROOT'].'/EventPulse/img/';
+            $uploaddir = $_SERVER['DOCUMENT_ROOT'].'/img/';
             $uploadfile = $uploaddir . $newfilename;
 
             if (move_uploaded_file($_FILES['catimage']['tmp_name'], $uploadfile)) {

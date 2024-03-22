@@ -45,7 +45,7 @@ $result = pg_query($conn, $sql);
 
                                 echo '<tr>
                                     <td>' .$Id. '</td>
-                                    <td><img src="/EventPulse/img/person-' .$Id. '.jpg" alt="image for this user" onError="this.src =\'/EventPulse/img/profilePic.jpg\'" width="100px" height="100px"></td>
+                                    <td><img src="/img/person-' .$Id. '.jpg" alt="image for this user" onError="this.src =\'/img/profilePic.jpg\'" width="100px" height="100px"></td>
                                     <td>' .$username. '</td>
                                     <td>
                                         <p>First Name : <b>' .$firstName. '</b></p>
@@ -179,7 +179,7 @@ $result = pg_query($conn, $sql);
                     </form>         
                 </div>
                 <div class="form-group col-md-4">
-                    <img src="/EventPulse/img/person-<?php echo $Id; ?>.jpg" alt="Profile Photo" width="100" height="100" onError="this.src ='/EventPulse/img/profilePic.jpg'">
+                    <img src="/img/person-<?php echo $Id; ?>.jpg" alt="Profile Photo" width="100" height="100" onError="this.src ='/img/profilePic.jpg'">
                     <form action="partials/_userManage.php" method="post">
                         <input type="hidden" id="userId" name="userId" value="<?php echo $Id; ?>">
                         <button type="submit" class="btn btn-success mt-2" name="removeProfilePhoto">Remove Img</button>

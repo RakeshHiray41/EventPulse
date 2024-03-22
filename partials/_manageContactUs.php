@@ -21,7 +21,7 @@ if ($passRow && password_verify($password, $passRow['password'])) {
     $result = pg_query_params($conn, $sql, array($userId, $email, $phone, $orderId, $message));
     $contactId = pg_last_oid($result);
     echo '<script>alert("Thanks for Contacting us. Your contact id is ' . $contactId . '. We will contact you very soon.");
-        window.location.href="http://localhost/EventPulse/index.php";  
+        window.location.href="http://localhost/index.php";  
         </script>';
     exit();
 } else {

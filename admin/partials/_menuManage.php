@@ -23,7 +23,7 @@ $pizzaId=$row["pizzaId"];
                 $newName = 'pizza-'.$pizzaId;
                 $newfilename=$newName .".jpg";
 
-                $uploaddir = $_SERVER['DOCUMENT_ROOT'].'/EventPulse/img/';
+                $uploaddir = $_SERVER['DOCUMENT_ROOT'].'/img/';
                 $uploadfile = $uploaddir . $newfilename;
 
                 if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile)) {
@@ -54,7 +54,7 @@ $pizzaId=$row["pizzaId"];
         $sql = "DELETE FROM pizza WHERE \"pizzaId\"='$pizzaId'";   
 $result = pg_query($conn, $sql);
 
-        $filename = $_SERVER['DOCUMENT_ROOT']."/EventPulse/img/pizza-".$pizzaId.".jpg";
+        $filename = $_SERVER['DOCUMENT_ROOT']."/img/pizza-".$pizzaId.".jpg";
         if ($result){
             if (file_exists($filename)) {
                 unlink($filename);
@@ -97,7 +97,7 @@ $result = pg_query($conn, $sql);
             $newName = 'pizza-'.$pizzaId;
             $newfilename=$newName .".jpg";
 
-            $uploaddir = $_SERVER['DOCUMENT_ROOT'].'/EventPulse/img/';
+            $uploaddir = $_SERVER['DOCUMENT_ROOT'].'/img/';
             $uploadfile = $uploaddir . $newfilename;
 
             if (move_uploaded_file($_FILES['itemimage']['tmp_name'], $uploadfile)) {
