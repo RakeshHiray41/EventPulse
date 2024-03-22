@@ -1806,5 +1806,12 @@ body.mobile-nav-active #mobile-nav-toggle {
     align-items: center;
     justify-content: flex-start;
     height: 33px;
-   
+}
+.search-input{
+  height: 35px;
+}
+
+.mycontainer{
+  margin-top: 100px;
+  padding-top: 40px;
 }

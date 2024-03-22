@@ -1,6 +1,3 @@
-
-
-<?php include 'config.php';?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,9 +47,7 @@ background: #eee;
 
 
 <?php
-include_once("header1.php");
-
-
+include("partials/_nav.php");
 ?>
 
 <section class="mt-5 mb-5">
@@ -82,10 +77,11 @@ include_once("header1.php");
 
           <div class="d-flex justify-content-around align-items-center mb-4">
             <!-- Checkbox -->
-            <div class="form-check">
+            <!-- <div class="form-check">
               <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
               <label class="form-check-label" for="form1Example3"> Remember me </label>
-            </div>
+            </div> -->
+            <a style="color: green;" data-toggle="modal" data-target="#signupModal">Create New Account</a>
             <a href="#!">Forgot password?</a>
           </div>
 
