@@ -15,9 +15,9 @@
     body{
 		width: 100%;
 	    height: calc(100%);
-	    /*background: #007bff;*/
+	    background-color: #0e1b4d;
 	}
-	main#main{
+	main #main{
 		width:100%;
 		height: calc(100%);
 		background:white;
@@ -39,37 +39,55 @@
 		background:#00000061;
 		display: flex;
 		align-items: center;
+        flex-direction: column;
+        justify-content: center;
 	}
+    #login-left img{
+        height: 100%;
+        width: 100%;
+    }
 	#login-right .card{
 		margin: auto
 	}
 	.logo {
-	    margin: auto;
+	    /* margin: auto; */
 	    font-size: 8rem;
 	    background: white;
+        
 	    border-radius: 50% 50%;
-	    height: 29vh;
-	    width: 13vw;
+	    height: 40vh;
+	    width: 19vw;
 	    display: flex;
 	    align-items: center;
 	}
 	.logo img{
-		height: 80%;
-		width: 80%;
+		/* height: 80%; */
+		/* width: 80%; */
+        border-radius: 5%;
 		margin: auto
 	}
+    .title h2{
+        color: white;
+    }
 </style>
 </head>
 <body>
-    <main id="main" class=" bg-dark">
+    <main id="main" class=" ">
         <div id="login-left">
+         <div class="title">
+            <h2>Welcome Back Chief !</h2>
+         </div>
         <div class="logo">
-            <img src="/img/sample_logo.png" alt="">
+            <img src="/img/sample_logo.gif" alt="">
         </div>
         </div>
         <div id="login-right">
         <div class="card col-md-8">
+            <div class="card-head text-center">
+                <h2>Login</h2>
+            </div>
             <div class="card-body">
+               
             <form action="partials/_handleLogin.php" method="post">
                 <div class="form-group">
                 <label for="username" class="control-label"><b>Username</b></label>

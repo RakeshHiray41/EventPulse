@@ -56,7 +56,7 @@ $not_login_li = '
 
 
 echo ' 
-<header id="header" class="header-fixed">
+<header id="header" class="header-fixed" style="margin-bottom:40px;">
 <div class="container">
 
   <div id="logo" class="pull-left">

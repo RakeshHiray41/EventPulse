@@ -421,7 +421,7 @@
     ============================-->
     <section id="contact" class="section-bg wow fadeInUp">
 
-      <div class="container">
+      <div class="container mt-5">
 
         <div class="section-header">
           <h2>Contact Us</h2>
