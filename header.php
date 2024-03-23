@@ -14,7 +14,7 @@ $host = "localhost";
 $port = "5432"; 
 $dbname = "Demo";
 $user = "postgres"; 
-$password = "1234"; 
+$password = "Harish"; 
 
 $connection_string = "host={$host} port={$port} dbname={$dbname} user={$user} password={$password}";
 
@@ -60,7 +60,7 @@ while ($row = pg_fetch_assoc($result)) {
           </li>
           
         </ul>
-        <form method="get" action="/EventPulse/search.php" class="form-inline my-2 my-lg-0 mx-3">
+        <form method="get" action="/search.php" class="form-inline my-2 my-lg-0 mx-3">
           <input class="form-control mr-sm-2" type="search" name="search" id="search" placeholder="Search" aria-label="Search" required>
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>';

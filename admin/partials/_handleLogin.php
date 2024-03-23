@@ -19,19 +19,19 @@ $num = pg_num_rows($result);
                 $_SESSION['adminloggedin'] = true;
                 $_SESSION['adminusername'] = $username;
                 $_SESSION['adminuserId'] = $userId;
-                header("location: /EventPulse/admin/index.php?loginsuccess=true");
+                header("location: /admin/index.php?loginsuccess=true");
                 exit();
             } 
             else{
-                header("location: /EventPulse/admin/login.php?loginsuccess=false");
+                header("location: /admin/login.php?loginsuccess=false");
             }
         }
         else {
-            header("location: /EventPulse/admin/login.php?loginsuccess=false");
+            header("location: /admin/login.php?loginsuccess=false");
         }
     } 
     else{
-        header("location: /EventPulse/admin/login.php?loginsuccess=false");
+        header("location: /admin/login.php?loginsuccess=false");
     }
 }    
 ?>

@@ -9,5 +9,5 @@ unset($_SESSION["table_no"]);
 // session_unset();
 // session_destroy();
 
-header("location: /EventPulse/EventPulse/index.php");
+header("location: /index.php");
 ?>

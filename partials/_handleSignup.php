@@ -17,7 +17,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if($numExistRows > 0){
         // Username already exists
         $showError = "Username Already Exists";
-        header("Location: /EventPulse/index.php?signupsuccess=false&error=$showError");
+        header("Location: /index.php?signupsuccess=false&error=$showError");
         
     }
     else{
@@ -28,14 +28,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $result = pg_query($conn, $sql);
             if ($result){
                 $showAlert = true;
-                header("Location: /EventPulse/index.php?signupsuccess=true");
+                header("Location: /index.php?signupsuccess=true");
                
             }
         }
         else{
             // Passwords do not match
             $showError = "Passwords do not match";
-            header("Location: /EventPulse/index.php?signupsuccess=false&error=$showError");
+            header("Location: /index.php?signupsuccess=false&error=$showError");
             
         }
     }

@@ -55,7 +55,7 @@
                                         echo '<tr>
                                                 <th scope="row">
                                                     <div class="p-2">
-                                                    <img src="/EventPulse/img/pizza-'.$pizzaId. '.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
+                                                    <img src="/img/pizza-'.$pizzaId. '.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
                                                     <div class="ml-3 d-inline-block align-middle">
                                                         <h5 class="mb-0"> '.$pizzaName. '</h5><span class="text-muted font-weight-normal font-italic d-block">Rs. ' .$pizzaPrice. '/-</span>
                                                     </div>

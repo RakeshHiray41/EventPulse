@@ -276,6 +276,16 @@ h6 {
   font-size: 14px;
   outline: none;
 }
+.nav-menu #signup{
+  padding: 8px;
+  text-decoration: none;
+  display: inline-block;
+  color: rgba(202, 206, 221, 0.8);
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  outline: none;
+}
 
 .nav-menu .menu-active a,
 .nav-menu a:hover {
@@ -1786,4 +1796,22 @@ body.mobile-nav-active #mobile-nav-toggle {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #0e1b4d;;
+}
+
+/*----------------------*/
+/*profile image css*/
+
+.myimg{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 33px;
+}
+.search-input{
+  height: 35px;
+}
+
+.mycontainer{
+  margin-top: 100px;
+  padding-top: 40px;
 }

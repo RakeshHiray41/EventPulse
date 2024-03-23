@@ -26,7 +26,7 @@
 
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
-
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -35,16 +35,20 @@
     Header
   ============================-->
    <?php 
-      include "header1.php"
+      include "partials/_nav.php";
+      // include "header1.php";
    ?>
+
+
+
   <!--==========================
     Intro Section
   ============================-->
   <section id="intro">
     <div class="intro-container wow fadeIn">
       <h1 class="mb-4 pb-0">Welcome to <span>Event Pulse </span> Planning <br><p>Your Ultimate Birthday Celebration Hub</p></h1>
-    <a href="#about" class="about-btn scrollto">About The EventPulse</a></div>
-
+    <!-- <a href="#about" class="about-btn scrollto">About The EventPulse</a> -->
+    <a class = "about-btn scrollto" href="index.php#buy-tickets">Book Event</a></div>
   </section>
 
   <main id="main">
@@ -210,7 +214,7 @@
       </div>
 
     </section>
-    <!-- <iframe src="http://localhost/EventPulse/index.php" title="description" width="100%" height="100%"></iframe> -->
+    <!-- <iframe src="http://localhost/index.php" title="description" width="100%" height="100%"></iframe> -->
     <!--==========================
       F.A.Q Section
     ============================-->
@@ -488,75 +492,13 @@
     Footer
   ============================-->
 
-  <footer id="footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6 footer-info">
-            <a href="#intro" class="scrollto"><span id="logo">Event<span id="sub-logo">Pulse</span></span></a>
-            <p>
-              Event Pulse is your premier destination for seamless birthday celebration planning. Our mission is to make every birthday unforgettable by providing access to top-notch venues, personalized services, and expert support.</p>
-          </div>
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="fa fa-angle-right"></i> <a href="#intro">Home</a></li>
-              <li><i class="fa fa-angle-right"></i> <a href="#about">About us</a></li>
-              <li><i class="fa fa-angle-right"></i> <a href="#">Services</a></li>
-             
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-          
-              <li><i class="fa fa-angle-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="fa fa-angle-right"></i> <a href="#">Privacy policy</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-contact">
-            <h4>Contact Us</h4>
-            <p>
-              College Road <br>
-              Near Kabra Book,Malegaon<br>
-              Maharashtra , India<br>
-              <strong>Phone:</strong> +91 8112345667<br>
-              <strong>Email:</strong> eventpulse@gmail.com<br>
-            </p>
-
-            <div class="social-links">
-              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-              <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-              <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
-              <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong>EventPulse</strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-       
-        Designed by <a href="">EventPulse Dev Team</a>
-      </div>
-    </div>
-  </footer><!-- #footer -->
+  <?php include_once("partials/_footer.php");?>
 
 
   <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
 
-  <!-- JavaScript Libraries -->
-  <script src="lib/jquery/jquery.min.js"></script>
+<!-- JavaScript Libraries -->
+<script src="lib/jquery/jquery.min.js"></script>
   <script src="lib/jquery/jquery-migrate.min.js"></script>
   <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="lib/easing/easing.min.js"></script>
@@ -569,13 +511,16 @@
   <!-- Contact Form JavaScript File -->
   <script src="contactform/contactform.js"></script>
 
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>         
-    <script src="https://unpkg.com/bootstrap-show-password@1.2.1/dist/bootstrap-show-password.min.js"></script>
-
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>         
+  <script src="https://unpkg.com/bootstrap-show-password@1.2.1/dist/bootstrap-show-password.min.js"></script>
+
+
+
 
 </body>
 
