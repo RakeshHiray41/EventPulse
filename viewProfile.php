@@ -34,7 +34,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
     <style>
         body {
-            background-color: #221b1b;
+            /* background-color: #221b1b; */
         }
         .row {
             margin-right: 150px;
@@ -150,7 +150,7 @@
         if($loggedin) {
     ?>
     
-    <div class="container">
+    <div class="container pt-5 ">
     <?php 
 $sql = "SELECT * FROM users WHERE \"id\" = $1"; 
 $result = pg_query_params($conn, $sql, array($userId));
@@ -168,12 +168,12 @@ if ($userType == 0) {
 }
 ?>
 
-        <div class="row">
-            <div class="jumbotron p-3 mb-3" style="display: flex;justify-content: center;width: 28%;border-radius: 50px;margin: 0 auto;">
+        <div class="row mx-auto"  >
+            <div class="jumbotron p-3 mb-3 " style="display: flex;justify-content: center;margin: 0 auto;">
                 <div class="user-info">
                     <img class="rounded-circle mb-3 bg-dark" src="img/person-<?php echo $userId; ?>.jpg" onError="this.src = 'img/profilePic.jpg'" style="width:215px;height:215px;padding:1px;">
                     <form action="partials/_manageProfile.php" method="POST">
-                        <small>Remove Image: </small><button type="submit" class="btn btn-primary" name="removeProfilePic" style="font-size: 12px;padding: 3px 8px;border-radius: 9px;">remove</button>
+                        <small>Remove Image: </small><button type="submit" class="btn btn-primary" name="removeProfilePic" style="font-size: 12px;padding: 3px 8px;">remove</button>
                     </form>
                     <form action="partials/_manageProfile.php" method="POST" enctype="multipart/form-data" style="margin-top: 7px;">
                         <div class="upload-btn-wrapper">
@@ -195,7 +195,7 @@ if ($userType == 0) {
                 </div>
             </div>
             <div class="content-panel mb-3" style="display: flex;justify-content: center;">
-                <div class="border p-3" style="border: 2px solid rgba(0, 0, 0, 0.1);border-radius: 1.1rem;background-color: aliceblue;">
+                <div class="border p-3" style="border: 2px solid rgba(0, 0, 0, 0.1);background-color: aliceblue;">
                     <h2 class="title text-center">Profile<span class="pro-label label label-warning"> (<?php echo $userType ?>)</span></h2>
                 
                     <form action="partials/_manageProfile.php" method="post">
@@ -275,8 +275,8 @@ if ($userType == 0) {
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>         
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>         
+  <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>          -->
+  <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>          -->
   
   
   <script src="https://unpkg.com/bootstrap-show-password@1.2.1/dist/bootstrap-show-password.min.js"></script>
