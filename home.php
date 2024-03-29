@@ -1,6 +1,11 @@
 <!doctype html>
 <html lang="en">
-
+<?php
+   include("config.php");
+   if(!$loggedin){
+    header("location:login.php");
+   }
+?> 
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -44,42 +49,56 @@
   }  ?>
 
   <!-- Category container starts here -->
-  <div class="container my-3 mycontainer ">
-    <div class="col-lg-2 text-center bg-light my-3 " >
-      <!-- <h2 class="text-center">Menu </h2> -->
-
-      <select class="">
-        <!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          All Categories
-        </a> -->
-        <option>Select Categories</option>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">';
-         
-         <?php
+  <div class="container my-3 pt-5">
+    <div class="row">
+  
+      <div class="col-md-4 mt-5">
+                        <!--categories-->
+      <div class="container  ">
+        <div class="list-group">
+           
+            <?php
           $sql = 'SELECT "categorieName", "categorieId" FROM public.categories;';
           $result = pg_query($conn, $sql);
           while ($row = pg_fetch_assoc($result)) {
-            echo '<option><a class="dropdown-item" href="viewPizzaList.php?catid=' . $row['categorieId'] . '">' . $row['categorieName'] . '</a>'.'</option>';
+            echo '<li class="border list-group-item" > <a href="viewPizzaList.php?catid=' . $row['categorieId'] . '">' . $row['categorieName'] . '</a>' . '</li>';
           }
-
-
           ?>
-
         </div>
-      </select>
-        </div>
+    </div>
+</div>
 
-        <div class="row">
-          <!-- Fetch all the categories and use a loop to iterate through categories -->
-          <?php
-          $sql = "SELECT * FROM categories";
-          $result = pg_query($conn, $sql);
-          while ($row = pg_fetch_assoc($result)) {
-            $id = $row['categorieId'];
-            $cat = $row['categorieName'];
-            $desc = $row['categorieDesc'];
-            echo '<div class="col-xs-3 col-sm-3 col-md-3">
-                   <div class="card" style="width: 18rem;">
+
+
+      <div class="col-md-8 mt-5">
+        <!-- Fetch all the categories and use a loop to iterate through categories -->
+        <?php
+        $sql = "SELECT * FROM categories";
+        $result = pg_query($conn, $sql);
+        echo'<div class="row ">
+        
+        ';
+
+
+  // <div class="col">
+  //   <div class="card">
+  //     <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" class="card-img-top" alt="Hollywood Sign on The Hill">
+  //     <div class="card-body">
+  //       <h5 class="card-title">Card title</h5>
+  //       <p class="card-text">
+  //         This is a longer card with supporting text below as a natural lead-in to
+  //         additional content. This content is a little bit longer.
+  //       </p>
+  //     </div>
+  //   </div>
+  // </div>
+
+        while ($row = pg_fetch_assoc($result)) {
+          $id = $row['categorieId'];
+          $cat = $row['categorieName'];
+          $desc = $row['categorieDesc'];
+          echo '<div class="col p-1 w-100">
+                   <div class="card  mx-auto" style="width:20rem;">
                      <img src="img/card-' . $id . '.jpg" class="card-img-top" alt="image for this category" width="249px" height="270px">
                      <div class="card-body">
                        <h5 class="card-title"><a href="viewPizzaList.php?catid=' . $id . '">' . $cat . '</a></h5>
@@ -87,38 +106,41 @@
                        <a href="viewPizzaList.php?catid=' . $id . '" class="btn btn-primary">View All</a>
                      </div>
                    </div>
-                 </div>';
-          }
+                   </div>
+                 ';
+        }
 
-          ?>
-        </div>
+        echo'</div>';
+        ?>
+      </div>
     </div>
+  </div>
 
 
 
-    <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
-    <?php include_once("partials/_footer.php"); ?>
-    <!-- JavaScript Libraries -->
-    <script src="lib/jquery/jquery.min.js"></script>
-    <script src="lib/jquery/jquery-migrate.min.js"></script>
-    <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/superfish/hoverIntent.js"></script>
-    <script src="lib/superfish/superfish.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/venobox/venobox.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+  <?php include_once("partials/_footer.php"); ?>
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/superfish/hoverIntent.js"></script>
+  <script src="lib/superfish/superfish.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/venobox/venobox.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
-    <!-- Contact Form JavaScript File -->
-    <script src="contactform/contactform.js"></script>
+  <!-- Contact Form JavaScript File -->
+  <script src="contactform/contactform.js"></script>
 
-    <!-- Template Main Javascript File -->
-    <script src="js/main.js"></script>
+  <!-- Template Main Javascript File -->
+  <script src="js/main.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>          -->
-    <script src="https://unpkg.com/bootstrap-show-password@1.2.1/dist/bootstrap-show-password.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>          -->
+  <script src="https://unpkg.com/bootstrap-show-password@1.2.1/dist/bootstrap-show-password.min.js"></script>
 
 
 

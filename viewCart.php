@@ -35,6 +35,7 @@
     #cont{
         min-height : 626px;
     }
+   
     </style>
 </head>
 <body>
@@ -45,7 +46,7 @@
     if($loggedin){
     ?>
     
-    <div class="container" id="cont">
+    <div class="container mt-5 pt-5" id="cont">
         <div class="row">
             <div class="alert alert-info mb-0" style="width: -webkit-fill-available;">
               <strong>Info!</strong> online payment are currently disabled so please choose cash on delivery.
@@ -74,8 +75,8 @@
          }
          
     ?>
-            <div class="col-lg-12 text-center border rounded bg-light my-3">
-                <h1>My Cart</h1>
+            <div class="col-lg-12 text-center border rounded bg-light my-2">
+                <h1>My Bookings</h1>
             </div>
             <div class="col-lg-8">
                 <div class="card wish-list mb-3">
@@ -133,7 +134,7 @@
                                         </tr>';
                                 }
                                 if ($counter == 0) {
-                                    ?><script> document.getElementById("cont").innerHTML = '<div class="col-md-12 my-5"><div class="card"><div class="card-body cart"><div class="col-sm-12 empty-cart-cls text-center"> <img src="https://i.imgur.com/dCdflKN.png" width="130" height="130" class="img-fluid mb-4 mr-3"><h3><strong>Your Cart is Empty</strong></h3><h4>Add something to make me happy :)</h4> <a href="home.php" class="btn btn-primary cart-btn-transform m-3" data-abc="true">continue shopping</a> </div></div></div></div>';</script> <?php
+                                    ?><script> document.getElementById("cont").innerHTML = '<div class="col-md-12 my-5"><div class="card"><div class="card-body cart"><div class="col-sm-12 empty-cart-cls text-center"> <img src="https://i.imgur.com/dCdflKN.png" width="130" height="130" class="img-fluid mb-4 mr-3"><h3><strong>Your Cart is Empty</strong></h3><h4>Add something to make me happy :)</h4> <a href="home.php" class="btn btn-primary cart-btn-transform m-3" data-abc="true">continue booking</a> </div></div></div></div>';</script> <?php
                                 }
                                 
                             ?>
@@ -153,6 +154,7 @@
                             <br>
                             <select class="form-select" name="caffe">
                                 <option >Select Caffe</option>
+                               
                                 <?php  
                                 $sql = 'SELECT *  FROM public.caffe_list;';
                                 $result = pg_query($conn, $sql);
@@ -160,7 +162,7 @@
                                     ?><option value="<?php echo $row['caffe_name']; ?>"><?php echo $row['caffe_name']; ?></option>
                                     <?php
                                 }
-?>
+                                ?>
                             </select>
                             <hr>
                             <button type="submit" class="btn btn-primary" name="submit">Check For Avaibility</button>
@@ -249,23 +251,11 @@
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>         
+  <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>          -->
   <script src="https://unpkg.com/bootstrap-show-password@1.2.1/dist/bootstrap-show-password.min.js"></script>
 
 
 
-
-</body>
-
-</html>
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>         
-    <script src="https://unpkg.com/bootstrap-show-password@1.2.1/dist/bootstrap-show-password.min.js"></script>
     <script>
         function check(input) {
             if (input.value <= 0) {
