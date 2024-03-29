@@ -45,12 +45,15 @@
                                    
                                        $itemsql = "SELECT * FROM pizza WHERE \"pizzaId\" = $1";
                                        $itemresult = pg_query_params($conn, $itemsql, array($pizzaId));
+                                      
+                                       if($itemresult){
                                        $itemrow = pg_fetch_assoc($itemresult);
-                                       $pizzaName = $itemrow['pizzaName'];
-                                       $pizzaPrice = $itemrow['pizzaPrice'];
-                                       $pizzaDesc = $itemrow['pizzaDesc'];
-                                       $pizzaCategorieId = $itemrow['pizzaCategorieId'];
-                                   
+                                       if($itemrow){
+                                        $pizzaName = $itemrow['pizzaName'];
+                                        $pizzaPrice = $itemrow['pizzaPrice'];
+                                        $pizzaDesc = $itemrow['pizzaDesc'];
+                                        $pizzaCategorieId = $itemrow['pizzaCategorieId'];
+                                      
                                        echo '<tr>
                                                <th scope="row">
                                                    <div class="p-2">
@@ -63,6 +66,12 @@
                                                </th>
                                                <td class="align-middle text-center"><strong>' . $itemQuantity . '</strong></td>
                                            </tr>';
+                                        }
+                                    }
+                                    else{
+                                      echo "No pizza found for pizzaId: $pizzaId";
+                                      continue;
+                                    }
                                    }
                                     ?>                                   
                             </tbody>

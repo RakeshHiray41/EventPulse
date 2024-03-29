@@ -64,8 +64,8 @@
   
     <!-- Pizza container starts here -->
     <div class="container my-3 mt-5" id="cont">
-        <div class="col-lg-4 text-center bg-light my-3" style="margin:auto;border-top: 2px groove black;border-bottom: 2px groove black;">     
-            <h2 class="text-center"><span id="catTitle">Items</span></h2>
+        <div class="col-lg-4 text-center bg-light my-3" style="margin:auto; margin-top:5px;border-bottom: 2px groove black;">     
+            <h2 class="text-center"><span id="catTitle"></span></h2>
         </div>
         <div class="row">
         <?php
@@ -80,8 +80,8 @@
                 $pizzaPrice = $row['pizzaPrice'];
                 $pizzaDesc = $row['pizzaDesc'];
                 
-                echo '<div class="col-xs-3 col-sm-3 col-md-3">
-                        <div class="card" style="width: 18rem;">
+                echo '<div class="mx-auto">
+                        <div class="card m-2" style="width: 18rem;">
                             <img src="img/pizza-' . $pizzaId . '.jpg" class="card-img-top" alt="image for this pizza" width="249px" height="270px">
                             <div class="card-body">
                                 <h5 class="card-title">' . substr($pizzaName, 0, 20) . '...</h5>
