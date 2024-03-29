@@ -46,11 +46,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     if(isset($_POST['checkout'])) {
         $amount = $_POST["amount"];
         $table_no = $_POST["address"]; //table no
-
-        $sql = "INSERT INTO orders (\"userId\", \"table_no\", \"amount\", \"paymentMode\", \"orderStatus\", \"orderDate\") VALUES ($1, $2, $3, '0', '0', current_timestamp)";
+        $sql = "INSERT INTO orders (\"userId\", \"cafe_no\", \"amount\", \"paymentMode\", \"orderStatus\", \"orderDate\") VALUES ($1, $2, $3, '0', '0', current_timestamp)";
         $result = pg_query_params($conn, $sql, array($userId, $table_no, $amount));
         if ($result) {
-            $orderId = pg_fetch_result(pg_query("SELECT LASTVAL()"), 0, 0);
+            $orderId = pg_fetch_result(pg_query($conn,"SELECT LASTVAL();"), 0, 0);
             $addSql = "SELECT * FROM viewcart WHERE \"userId\" = $1"; 
             $addResult = pg_query_params($conn, $addSql, array($userId));
             while($addrow = pg_fetch_assoc($addResult)){
@@ -61,17 +60,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             }
             $deletesql = "DELETE FROM viewcart WHERE \"userId\" = $1";   
             $deleteresult = pg_query_params($conn, $deletesql, array($userId));
-            echo '<script>alert("Thanks for ordering with us. Your order id is ' . $orderId . '.");
-                window.location.href="http://localhost/index.php";  
-                </script>';
-                exit();
+            echo 'success';
+                // header("location:/home.php");
+                // exit();
         } 
     }    
-    if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
-        $pizzaId = $_POST['pizzaId'];
-        $qty = $_POST['quantity'];
-        $updatesql = "UPDATE viewcart SET \"itemQuantity\" = $2 WHERE \"pizzaId\" = $1 AND \"userId\" = $3";
-        $updateresult = pg_query_params($conn, $updatesql, array($pizzaId, $qty, $userId));
-    }
+    // if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+    //     $pizzaId = $_POST['pizzaId'];
+    //     $qty = $_POST['quantity'];
+    //     $updatesql = "UPDATE viewcart SET \"itemQuantity\" = $2 WHERE \"pizzaId\" = $1 AND \"userId\" = $3";
+    //     $updateresult = pg_query_params($conn, $updatesql, array($pizzaId, $qty, $userId));
+    // }
 }
 ?>

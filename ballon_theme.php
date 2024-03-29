@@ -34,29 +34,9 @@
   <!--==========================
     Header
   ============================-->
-  <header id="header" class="header-fixed">
-    <div class="container">
-
-      <div id="logo" class="pull-left">
-        <!-- Uncomment below if you prefer to use a text logo -->
-        <!-- <h1><a href="#main">C<span>o</span>nf</a></h1>-->
-        <a href="#intro" class="scrollto"><span id="logo">Event<span id="sub-logo">Pulse</span></span></a>
-
-      </div>
-
-      <nav id="nav-menu-container">
-        <ul class="nav-menu">
-          <li ><a href="#intro">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li class="menu-active" ><a href="#speakers">Themes</a></li>
-          <li><a href="#hotels">Cafe</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li class="buy-tickets"><a href="index.html#buy-tickets">Book Event</a></li>
-        </ul>
-      </nav><!-- #nav-menu-container -->
-    </div>
-  </header><!-- #header -->
+ <?php 
+    include("partials/_nav.php");
+ ?>
 
   <main id="main" class="main-page">
 
@@ -66,30 +46,31 @@
     <section id="speakers-details" class="wow fadeIn">
       <div class="container">
         <div class="section-header">
-          <h2>2D Themes Celebration</h2>
-          <p>Transform your birthday party into a whimsical wonderland with our enchanting 2D themes! Perfect for those seeking a touch of magic and nostalgia, our 2D themes bring beloved characters and iconic designs to life in vibrant, two-dimensional splendor.</p>
+          <h2>Balloon Theme Celebration</h2>
+          <p>Elevate your birthday party with the timeless charm and playful elegance of our Balloon Theme Celebration! Delight in a kaleidoscope of colors, shapes, and sizes as vibrant balloons fill the air, creating a festive atmosphere that will leave your guests in awe.</p>
         </div>
 
         <div class="row">
           <div class="col-md-6">
-            <img src="img/cack.jpg" alt="Speaker 1" class="img-fluid">
+            <img src="img/ballons.jpg" alt="Speaker 1" class="img-fluid">
           </div>
 
           <div class="col-md-6">
             <div class="details">
-              <h3>2D Theme</h3>
-              <h4>Why Choose 2D Themes?</h4>
+              <h3>Balloon Theme</h3>
+              <h4>Why Choose a Balloon Theme?</h4>
               <ul>
-                <li><span>Magical Atmosphere:</span> Immerse yourself in a world of fantasy and fun as our 2D themes transport you and your guests to an enchanting realm filled with wonder and delight.</li>
-                <li><span> Characters:</span> From timeless classics to modern favorites, our 2D themes feature a diverse array of beloved characters and motifs to suit every taste and preference.</li>
-                <li><span> Options:</span> Personalize your celebration with a variety of customizable options, including themed decorations, tableware, party favors, and more. Create a truly unique and memorable experience for your birthday party guests.</li>
-                <li><span>Setup:</span>  Planning a themed party has never been easier! Our 2D themes come with everything you need to bring your vision to life, making setup and cleanup a breeze.</li>
+                <li><span>Colorful Decor:</span> Bring joy and excitement to your celebration with an explosion of vibrant colors. Our Balloon Theme features a stunning array of balloons in every hue imaginable, creating a visually stunning backdrop that will dazzle your guests.</li>
+                <li><span> Versatile Design: </span> Whether you're hosting a whimsical children's party or an elegant soirée for adults, our Balloon Theme can be customized to suit any occasion. From classic balloon arches and bouquets to intricate balloon sculptures and installations, the possibilities are endless.</li>
+                <li><span> Playful Atmosphere: </span>  Ignite the spirit of play and imagination with our Balloon Theme. Watch as guests of all ages are drawn to the whimsical charm of floating balloons, creating an atmosphere of joy and excitement that will make your celebration truly unforgettable.</li>
+                <li><span>Photo Opportunities:</span> Capture memories that will last a lifetime with our Balloon Theme's picture-perfect photo opportunities. From whimsical balloon backdrops to fun props and accessories, your guests will love posing for photos against the backdrop of our stunning balloon displays.</li>
               </ul>
               <br>
-              <h4>Popular 2D Themes</h4>
+              <h4>Popular Balloon Theme Elements</h4>
               <ul>
-                <li><span>Fairytale Princess:</span> Transport your guests to a magical kingdom where dreams come true with our <span></span> Princess theme. Featuring enchanting castles, sparkling tiaras, and elegant ball gowns, this theme is perfect for little princesses and princes of all ages.</li>
-                <li><span>Superhero Adventure:</span> Unleash your inner superhero with our action-packed Superhero Adventure theme. From ico<span></span>nic comic book characters to epic battles between good and evil, this theme is sure to ignite the imaginations of your guests and inspire unforgettable adventures.</li>
+                <li><span>Balloon Arch: </span> Make a grand entrance with a spectacular balloon arch framing the entrance to your party venue. Choose from a variety of colors and styles to create a stunning focal point that sets the tone for your celebration.</li>
+                <li><span>Balloon Bouquets:</span>Add a pop of color to tables, chairs, and other surfaces with charming balloon bouquets. Mix and match colors, sizes, and shapes to create eye-catching arrangements that enhance the overall aesthetic of your party.</li>
+                <li><span>Balloon Garland: </span> Create a whimsical backdrop for your party space with a beautiful balloon garland. Hang it behind the dessert table, photo booth, or stage area to add visual interest and depth to your decor.</li>
               </ul>
 
               
