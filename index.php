@@ -83,7 +83,7 @@
             <div class="speaker">
               <img src="img/cack.jpg" alt="Speaker 1" class="img-fluid1">
               <div class="details">
-                <h3><a href="2d_theme.html">2D THEMES</a></h3>
+                <h3><a href="2d_theme.php">2D THEMES</a></h3>
                 <p>We provide high-quality 2D Themes for all Birthday Party needs.
                 </p>
               </div>
@@ -93,7 +93,7 @@
             <div class="speaker">
               <img src="img/cack1.jpg" alt="Speaker 2" class="img-fluid">
               <div class="details">
-                <h3><a href="3d_theme.html">3D THEMES</a></h3>
+                <h3><a href="3d_theme.php">3D THEMES</a></h3>
                 <p>Why just celebrate in a simple way, do it in a very dreamful way.</p>
                 
               </div>
@@ -103,7 +103,7 @@
             <div class="speaker">
               <img src="img/ballons.jpg" alt="Speaker 3" class="img-fluid">
               <div class="details">
-                <h3><a href="ballon_theme.html">BALOONS THEMES</a></h3>
+                <h3><a href="ballon_theme.php">BALOONS THEMES</a></h3>
                 <p>We offer a wide range of balloon decorations for Birthday Parties.</p>
                
               </div>
@@ -130,60 +130,40 @@
       <div class="container">
         <div class="section-header">
           <h2>Cafe</h2>
-          <p>Her are some nearby Cafe</p>
+          <p>Here are some nearby Cafe</p>
         </div>
 
+       
+        
+       
         <div class="row">
 
-          <div class="col-lg-4 col-md-6">
+        <?php 
+          $sql = "select * FROM public.caffe_list;";
+          $result = pg_query($conn, $sql);
+          while ($row = pg_fetch_assoc($result)) {
+        
+          echo '<div class="col-lg-4 col-md-6">
             <div class="hotel">
               <div class="hotel-img">
-                <img src="img/hotels/1.jpg" alt="Hotel 1" class="img-fluid">
+                <img src="img/hotels/'.$row['caffe_id'].'.jpg" alt="Hotel 1" class="img-fluid">
               </div>
-              <h3><a href="#">Mom's Magic</a></h3>
-              <div class="stars">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-              </div>
-              <p>Near Paras Super Market Collage road</p>
-            </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6">
-            <div class="hotel">
-              <div class="hotel-img">
-                <img src="img/hotels/2.jpg" alt="Hotel 2" class="img-fluid">
-              </div>
-              <h3><a href="#">Nescafe</a></h3>
+              <h3><a href="cafe.php?id='.$row['caffe_id'].'">'.$row['caffe_name'].'</a></h3>
               <div class="stars">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half-full"></i>
-              </div>
-              <p>Camp Rd, Gaytri Nagar, AgricultureCollage Farm Area, Malegaon, Maharashtra 423203</p>
-            </div>
-          </div>
+              ';
+                for($i =0; $i<$row['rating']; $i++){
+                echo '<i class="fa fa-star"></i>';
+                };
+                echo'
+                </div>
+                 <p>'.$row['address'].'</p>
+                 </div>
+          </div>';
 
-          <div class="col-lg-4 col-md-6">
-            <div class="hotel">
-              <div class="hotel-img">
-                <img src="img/hotels/3.jpg" alt="Hotel 3" class="img-fluid">
-              </div>
-              <h3><a href="#">Hapiness Restaurant</a></h3>
-              <div class="stars">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-              </div>
-              <p>DK CORNER, SANMATI HEIGHTS, COLLEGE ROAD, Soygaon, Malegaon, Maharashtra 423105</p>
-            </div>
-          </div>
+          }
+        ?>
+       
 
         </div>
       </div>

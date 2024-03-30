@@ -31,32 +31,12 @@
 
 <body>
 
-  <!--==========================
+ <!--==========================
     Header
   ============================-->
-  <header id="header" class="header-fixed">
-    <div class="container">
-
-      <div id="logo" class="pull-left">
-        <!-- Uncomment below if you prefer to use a text logo -->
-        <!-- <h1><a href="#main">C<span>o</span>nf</a></h1>-->
-        <a href="#intro" class="scrollto"><span id="logo">Event<span id="sub-logo">Pulse</span></span></a>
-
-      </div>
-
-      <nav id="nav-menu-container">
-        <ul class="nav-menu">
-          <li ><a href="#intro">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li class="menu-active" ><a href="#speakers">Themes</a></li>
-          <li><a href="#hotels">Cafe</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li class="buy-tickets"><a href="index.html#buy-tickets">Book Event</a></li>
-        </ul>
-      </nav><!-- #nav-menu-container -->
-    </div>
-  </header><!-- #header -->
+  <?php 
+   include("partials/_nav.php");
+?>
 
   <main id="main" class="main-page">
 
@@ -66,29 +46,33 @@
     <section id="speakers-details" class="wow fadeIn">
       <div class="container">
         <div class="section-header">
-          <h2>Speaker Details</h2>
-          <p>Praesentium ut qui possimus sapiente nulla.</p>
+          <h2>2D Themes Celebration</h2>
+          <p>Transform your birthday party into a whimsical wonderland with our enchanting 2D themes! Perfect for those seeking a touch of magic and nostalgia, our 2D themes bring beloved characters and iconic designs to life in vibrant, two-dimensional splendor.</p>
         </div>
 
         <div class="row">
           <div class="col-md-6">
-            <img src="img/speakers/1.jpg" alt="Speaker 1" class="img-fluid">
+            <img src="img/cack.jpg" alt="Speaker 1" class="img-fluid">
           </div>
 
           <div class="col-md-6">
             <div class="details">
-              <h2>Brenden Legros</h2>
-              <div class="social">
-                <a href=""><i class="fa fa-twitter"></i></a>
-                <a href=""><i class="fa fa-facebook"></i></a>
-                <a href=""><i class="fa fa-google-plus"></i></a>
-                <a href=""><i class="fa fa-linkedin"></i></a>
-              </div>
-              <p>Voluptatem perferendis sed assumenda voluptatibus. Laudantium molestiae sint. Doloremque odio dolore dolore sit. Quae labore alias ea omnis ex expedita sapiente molestias atque. Optio voluptas et.</p>
- 
-              <p>Aboriosam inventore dolorem inventore nam est esse. Aperiam voluptatem nisi molestias laborum ut. Porro dignissimos eum. Tempore dolores minus unde est voluptatum incidunt ut aperiam.</p> 
+              <h3>2D Theme</h3>
+              <h4>Why Choose 2D Themes?</h4>
+              <ul>
+                <li><span>Magical Atmosphere:</span> Immerse yourself in a world of fantasy and fun as our 2D themes transport you and your guests to an enchanting realm filled with wonder and delight.</li>
+                <li><span> Characters:</span> From timeless classics to modern favorites, our 2D themes feature a diverse array of beloved characters and motifs to suit every taste and preference.</li>
+                <li><span> Options:</span> Personalize your celebration with a variety of customizable options, including themed decorations, tableware, party favors, and more. Create a truly unique and memorable experience for your birthday party guests.</li>
+                <li><span>Setup:</span>  Planning a themed party has never been easier! Our 2D themes come with everything you need to bring your vision to life, making setup and cleanup a breeze.</li>
+              </ul>
+              <br>
+              <h4>Popular 2D Themes</h4>
+              <ul>
+                <li><span>Fairytale Princess:</span> Transport your guests to a magical kingdom where dreams come true with our <span></span> Princess theme. Featuring enchanting castles, sparkling tiaras, and elegant ball gowns, this theme is perfect for little princesses and princes of all ages.</li>
+                <li><span>Superhero Adventure:</span> Unleash your inner superhero with our action-packed Superhero Adventure theme. From ico<span></span>nic comic book characters to epic battles between good and evil, this theme is sure to ignite the imaginations of your guests and inspire unforgettable adventures.</li>
+              </ul>
 
-              <p>Et dolore blanditiis officiis non quod id possimus. Optio non commodi alias sint culpa sapiente nihil ipsa magnam. Qui eum alias provident omnis incidunt aut. Eius et officia corrupti omnis error vel quia omnis velit. In qui debitis autem aperiam voluptates unde sunt et facilis.</p>
+              
             </div>
           </div>
           
