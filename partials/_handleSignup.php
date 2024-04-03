@@ -1,6 +1,7 @@
 <?php
 $showAlert = false;
 $showError = false;
+
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     include '_dbconnect.php'; // Ensure this file is adjusted for PostgreSQL connection
     $username = pg_escape_string($conn, $_POST["username"]);
@@ -28,6 +29,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $result = pg_query($conn, $sql);
             if ($result){
                 $showAlert = true;
+                ?>
+                 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+                 <script>
+                    console.log("hello");
+                    swal({
+                                          title: "Signup successfull..",
+                                          text: "we are redirecting to home page",
+                                          icon: "success"
+                                      })
+                                      .then((value) => {
+                                          window.location = "home.php";
+                                      });
+                 </script>
+
+                <?php
                 header("Location: /index.php?signupsuccess=true");
                
             }

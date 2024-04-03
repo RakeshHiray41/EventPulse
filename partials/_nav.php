@@ -65,7 +65,6 @@ $not_login_li = '
 <li><a href="index.php#gallery">Gallery</a></li>
 <li><a href="index.php#contact">Contact</a></li>
 <li class="Login"><a href="login.php">Login</a></li>
-<li ><a id="signup" data-toggle="modal" data-target="#signupModal">SignUp</a></li>
 <li>
    <form method="get" action="/search.php" class="form-inline ">
     <input class="form-control mr-sm-2 search-input p-1" type="search" name="search" id="search" placeholder="Search" aria-label="Search" required>

@@ -1,16 +1,17 @@
+<?php
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<!-- Created by CodingLab |www.youtube.com/c/CodingLabYT-->
+<html lang="en" dir="ltr">
 
 <head>
-  <meta charset="utf-8">
-  <title>EventPulse</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="" name="keywords">
-  <meta content="" name="description">
-
-  <!-- Favicons -->
-  <link href="img/logo.png" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+  <meta charset="UTF-8">
+  <!--<title> Login and Registration Form in HTML & CSS | CodingLab </title>-->
+  <link rel="stylesheet" href="css/loginpage.css">
+  <!-- Fontawesome CDN Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
@@ -30,91 +31,146 @@
 </head>
 
 <body>
-
-
-
-
-
-<style>
-    .divider:after,
-.divider:before {
-content: "";
-flex: 1;
-height: 1px;
-background: #eee;
-}
-</style>
-
-
-<?php
-include("partials/_nav.php");
-?>
-
-<section class="mt-5 mb-5">
-  <div class="container  h-100">
-    <div class="row d-flex align-items-center justify-content-center h-100">
-      <div class="col-md-10 col-lg-7 col-xl-6">
-        <img src="./gif/cake.gif"
-          class="img-fluid" alt="Phone image">
+  <?php
+  include("partials/_nav.php");
+  ?>
+  <section class="mt-5 mx-auto section1">
+    <div class="lcontainer">
+      <input type="checkbox" id="flip">
+      <div class="cover">
+        <div class="front1">
+          <img src="gif/cake.gif" alt="">
+          <div class="text">
+            <!-- <span class="text-1">Every new friend is a <br> new adventure</span> -->
+            <!-- <span class="text-2">Let's get connected</span> -->
+          </div>
+        </div>
+        <div class="back">
+          <img class="backImg" src="img/backImg.jpg" alt="">
+          <div class="text">
+            <span class="text-1">Complete miles of journey <br> with one step</span>
+            <span class="text-2">Let's get started</span>
+          </div>
+        </div>
       </div>
-      <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1" >
-      <form action="partials/_handleLogin.php" method="post">
-           <div class="container" >
-               <h3 style="text-align: center; font-weight:500;">Welcome Back !</h3>
-           </div> 
-          <!-- Email input -->
-          <div class="form-outline mb-4">
-          <input class="form-control" id="loginusername" name="loginusername" placeholder="Enter Your Username" type="text" required>
-
-            <!-- <label class="form-label" for="form1Example13">Email address</label> -->
-          </div>
-
-          <!-- Password input -->
-          <div class="form-outline mb-4">
-          <input class="form-control" id="loginpassword" name="loginpassword" placeholder="Enter Your Password" type="password" required data-toggle="password">
-            <!-- <label class="form-label" for="form1Example23">Password</label> -->
-          </div>
-
-          <div class="d-flex justify-content-around align-items-center mb-4">
-            <!-- Checkbox -->
-            <!-- <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
-              <label class="form-check-label" for="form1Example3"> Remember me </label>
-            </div> -->
-            <a style="color: green;" data-toggle="modal" data-target="#signupModal">Create New Account</a>
-            <a href="#!">Forgot password?</a>
-          </div>
-
-          <!-- Submit button -->
-          <button type="submit" class="btn btn-primary  btn-block">Login</button>
-
-         
-
-        </form>
-
-
-        <!-- 
-
-
-         <form action="partials/_handleLogin.php" method="post">
-              <div class="text-left my-2">
-                  <b><label for="username">Username</label></b>
-                  <input class="form-control" id="loginusername" name="loginusername" placeholder="Enter Your Username" type="text" required>
+      <div class="forms">
+        <div class="form-content">
+          <div class="login-form">
+            <div class="title">Login</div>
+            <form action="partials/_handleLogin.php" method="POST">
+              <div class="input-boxes">
+                <div class="input-box">
+                  <i class="fas fa-envelope"></i>
+                  <input type="text" placeholder="Enter your username" id="loginusername" name="loginusername" required>
+                </div>
+                <div class="input-box">
+                  <i class="fas fa-lock"></i>
+                  <input type="password" placeholder="Enter your password" id="loginpassword" name="loginpassword" required>
+                </div>
+                <div class="text"><a href="#">Forgot password?</a></div>
+                <div class="button input-box">
+                  <input type="submit" value="Submit" >
+                </div>
+                <div class="text sign-up-text">Don't have an account? <label for="flip">Sigup now</label></div>
               </div>
-              <div class="text-left my-2">
-                  <b><label for="password">Password</label></b>
-                  <input class="form-control" id="loginpassword" name="loginpassword" placeholder="Enter Your Password" type="password" required data-toggle="password">
-              </div>
-              <button type="submit" class="btn btn-success">Submit</button>
             </form>
+          </div>
 
+          <div class="signup-form">
+            <div class="title">Signup</div>
 
-         -->
+            <form action="partials/_handleSignup.php" method="post">
+              <div class="input-boxes">
+                <div class="input-box">
+                  <i class="fas fa-user"></i>
+                  <input  id="username" name="username" placeholder="Choose a unique Username" type="text" required minlength="3" maxlength="15">
+                </div>
+                <div class="form-row">
+                  <div class="input-box col-md-6">
+                    <i class="fas fa-user"></i>
+                    <input type="text"  id="firstName" name="firstName" placeholder="First Name" required>
+                  </div>
+                  <div class="input-box col-md-6">
+                    <i class="fas fa-user"></i>
+                    <input type="text"  id="lastName" name="lastName" placeholder="Last name" required>
+                  </div>
+                </div>
+                <div class="input-box">
+                  <i class="fas fa-envelope"></i>
+                  <input type="email"  id="email" name="email" placeholder="Enter Your Email" required>
+                </div>
+                <div class="input-box">
+                  <i class="fas fa-phone"></i>
+                  <input type="tel"  id="phone" name="phone" placeholder="Enter Your Phone Number" required pattern="[0-9]{10}" maxlength="10">
+                </div>
+                <div class="text-left input-box">
+                  <i class="fa fa-key"></i>
+                  <input  id="password" name="password" placeholder="Enter Password" type="password" required data-toggle="password" minlength="4" maxlength="21">
+                </div>
+                <div class="text-left input-box">
+                  <i class="fas fa-lock"></i>
+                  <input  id="cpassword" name="cpassword" placeholder="Renter Password" type="password" required data-toggle="password" minlength="4" maxlength="21">
+                </div>
+                <div class="button input-box">
+                  <input type="submit" value="submit" >
+                </div>
+              </div>
+              <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
+            </form>
+          </div>
+          <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+              <script>
+                  function signUp() {
+
+                      var username = $('#username').val();
+                      var firstname = $("#firstname").val();
+                      var lastname = $('#lastname').val();
+                      var email = $('#email').val();
+                      var phone = $('#phone').val();
+                      var password = $("#password").val();
+                      var cpassword = $('#cpassword').val();
+                     
+
+                      $.ajax({
+                          type: 'POST',
+                          url: '/partials/_handleSignup.php',
+                          data: {
+                              username: username,
+                              firstname: firstname,
+                              lastname:lastname,
+                              email:email,
+                              phone:phone,
+                              password:password,
+                              cpassword:cpassword
+                          },
+                          success: function(response) {
+                            console.log(response);
+                              // if (response.trim() === "success") {
+
+                                  swal({
+                                          title: "Signup successfull..",
+                                          text: "we are redirecting to home page",
+                                          icon: "success"
+                                      })
+                                      .then((value) => {
+                                          window.location = "home.php";
+                                      });
+                              // }
+
+                          },
+                          error: function(xhr, status, error) {
+                              alert('Error: ' + error); // Display error message
+                          }
+                      });
+                  }
+              </script>
+
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<?php 
-include_once("footer.php");
-?>
+  <?php
+  include_once("footer.php");
+  ?>
