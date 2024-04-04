@@ -134,7 +134,7 @@
     <?php include 'partials/_dbconnect.php';?>
     <?php include 'partials/_nav.php';?>
 
-    <div class="container">
+    <div class="container p-5">
         <div class="table-wrapper" id="empty">
             <div class="table-title">
                 <div class="row">
@@ -149,7 +149,7 @@
             </div>
             
             <table class="table table-striped table-hover text-center" id="NoOrder">
-            <thead style="background-color: rgb(111 202 203);">
+            <thead style="background-color: rgb(252, 252, 119);">
                 <tr>
                     <th>Order Id</th>
                     <th>User Id</th>
@@ -169,7 +169,7 @@
                         while($row = pg_fetch_assoc($result)) {
                         $Id = $row['userId'];
                         $orderId = $row['orderId'];
-                        $table_no = $row['table_no'];
+                        $table_no = $row['cafe_no'];
                         $amount = $row['amount'];
                         $orderDate = $row['orderDate'];
                         $paymentMode = $row['paymentMode'];

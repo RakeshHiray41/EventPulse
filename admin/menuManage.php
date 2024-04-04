@@ -6,7 +6,7 @@
 			<div class="col-md-4">
 			<form action="partials/_menuManage.php" method="post" enctype="multipart/form-data">
 				<div class="card mb-3">
-					<div class="card-header" style="background-color: rgb(111 202 203);">
+					<div class="card-header" style="background-color: rgb(252, 252, 119);">
 						Create New Item
 				  	</div>
 					<div class="card-body">
@@ -62,7 +62,7 @@
 				<div class="card">
 					<div class="card-body">
 						<table class="table table-bordered table-hover mb-0">
-							<thead style="background-color: rgb(111 202 203);">
+							<thead style="background-color: rgb(252, 252, 119);">
 								<tr>
 									<th class="text-center" style="width:7%;">Cat. Id</th>
 									<th class="text-center">Img</th>
@@ -129,7 +129,7 @@
 <div class="modal fade" id="updateItem<?php echo $pizzaId; ?>" tabindex="-1" role="dialog" aria-labelledby="updateItem<?php echo $pizzaId; ?>" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header" style="background-color: rgb(111 202 203);">
+      <div class="modal-header" style="background-color: rgb(252, 252, 119);">
         <h5 class="modal-title" id="updateItem<?php echo $pizzaId; ?>">Item Id: <?php echo $pizzaId; ?></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>

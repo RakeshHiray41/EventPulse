@@ -142,11 +142,11 @@
           $sql = "select * FROM public.caffe_list;";
           $result = pg_query($conn, $sql);
           while ($row = pg_fetch_assoc($result)) {
-        
+            // "card-" . $catId . ".jpg";
           echo '<div class="col-lg-4 col-md-6">
             <div class="hotel">
               <div class="hotel-img">
-                <img src="img/hotels/'.$row['caffe_id'].'.jpg" alt="Hotel 1" class="img-fluid">
+                <img src="img/cafe-'.$row['caffe_id'].'.jpg" alt="Hotel 1" class="img-fluid">
               </div>
 
               <h3><a href="cafe.php?id='.$row['caffe_id'].'">'.$row['caffe_name'].'</a></h3>
@@ -276,120 +276,7 @@
     <!--==========================
       Buy Ticket Section
     ============================-->
-    <section id="buy-tickets" class="section-with-bg wow fadeInUp">
-      <div class="container">
-
-        <div class="section-header">
-          <h2>Book Event</h2>
-          <p>Velit consequatur consequatur inventore iste fugit unde omnis eum aut.</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="card mb-5 mb-lg-0">
-              <div class="card-body">
-                <h5 class="card-title text-muted text-uppercase text-center">Standard Access</h5>
-                <h6 class="card-price text-center">&#x20B9 150</h6>
-                <hr>
-                <ul class="fa-ul">
-                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Cafe</li>
-                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Decorations</li>
-                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Cake</li>
-                  <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>Food</li>
-                  <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>Cold-Drinks</li>
-                  <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>Photo Shoot</li>
-                </ul>
-                <hr>
-                <div class="text-center">
-                  <button type="button" class="btn" data-toggle="modal" data-target="#buy-ticket-modal" data-ticket-type="standard-access">Book Now</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="card mb-5 mb-lg-0">
-              <div class="card-body">
-                <h5 class="card-title text-muted text-uppercase text-center">Pro Access</h5>
-                <h6 class="card-price text-center">&#x20B9 250</h6>
-                <hr>
-                <ul class="fa-ul">
-                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Cafe</li>
-                  <li><span class="fa-li"><i class="fa fa-check"></i></span>decorations</li>
-                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Cake</li>
-                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Food</li>
-                  <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>Cold-Drinks</li>
-                  <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>Photo Shoot</li>
-                </ul>
-                <hr>
-                <div class="text-center">
-                  <button type="button" class="btn" data-toggle="modal" data-target="#buy-ticket-modal" data-ticket-type="pro-access">Book Now</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Pro Tier -->
-          <div class="col-lg-4">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title text-muted text-uppercase text-center">Premium Access</h5>
-                <h6 class="card-price text-center">&#x20B9 350</h6>
-                <hr>
-                <ul class="fa-ul">
-                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Cafe</li>
-                  <li><span class="fa-li"><i class="fa fa-check"></i></span>decorations</li>
-                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Cake</li>
-                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Food</li>
-                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Cold-Drinks</li>
-                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Photo Shoot</li>
-                </ul>
-                <hr>
-                <div class="text-center">
-                  <button type="button" class="btn" data-toggle="modal" data-target="#buy-ticket-modal" data-ticket-type="premium-access">Book Now</button>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Modal Order Form -->
-      <div id="buy-ticket-modal" class="modal fade">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Book Event</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form method="POST" action="index.php">
-                <div class="form-group">
-                  <input type="text" class="form-control" name="username" placeholder="Your Name">
-                </div>
-                <div class="form-group">
-                  <input type="text" class="form-control" name="email" placeholder="Your Email">
-                </div>
-                <div class="form-group">
-                  <select id="ticket-type" name="event-type" class="form-control" >
-                    <option value="">-- Select Your Ticket Type --</option>
-                    <option value="standard-access">Standard Access</option>
-                    <option value="pro-access">Pro Access</option>
-                    <option value="premium-access">Premium Access</option>
-                  </select>
-                </div>
-                <div class="text-center">
-                  <button type="submit" class="btn">Book Now</button>
-                </div>
-              </form>
-            </div>
-          </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-      </div><!-- /.modal -->
-
-    </section>
+  
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>

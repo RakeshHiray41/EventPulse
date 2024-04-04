@@ -252,7 +252,7 @@
             </div>
             <div class="modal-body" id="messagebd">
               <table class="table-striped table-bordered col-md-12 text-center">
-                <thead style="background-color: rgb(111 202 203);">
+                <thead style="background-color: rgb(252, 252, 119);">
                     <tr>
                         <th>Contact Id</th>
                         <th>Reply Message</th>
@@ -300,7 +300,7 @@
             </div>
             <div class="modal-body" id="bd">
               <table class="table-striped table-bordered col-md-12 text-center">
-                <thead style="background-color: rgb(111 202 203);">
+                <thead style="background-color: rgb(252, 252, 119);">
                     <tr>
                         <th>Contact Id</th>
                         <th>Order Id</th>
