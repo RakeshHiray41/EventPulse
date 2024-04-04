@@ -68,7 +68,7 @@
 
         <div class="row">
           <div class="col-md-6">
-            <img src="img/hotels/'.$row['caffe_id'].'.jpg" alt="Speaker 1" class="img-fluid">
+            <img src="img/cafe-'.$row['caffe_id'].'.jpg" alt="Speaker 1" class="img-fluid">
           </div>
           
 

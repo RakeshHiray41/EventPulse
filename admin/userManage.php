@@ -11,7 +11,7 @@
 		<div class="card col-lg-12">
 			<div class="card-body">
 				<table class="table-striped table-bordered col-md-12 text-center">
-                    <thead style="background-color: rgb(111 202 203);">
+                    <thead style="background-color: rgb(252, 252, 119);">
                         <tr>
                             <th>UserId</th>
                             <th style="width:7%">Photo</th>
@@ -83,7 +83,7 @@ $result = pg_query($conn, $sql);
 <div class="modal fade" id="newUser" tabindex="-1" role="dialog" aria-labelledby="newUser" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header" style="background-color: rgb(111 202 203);">
+      <div class="modal-header" style="background-color: rgb(252, 252, 119);">
         <h5 class="modal-title" id="newUser">Create New User</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -160,7 +160,7 @@ $result = pg_query($conn, $sql);
 <div class="modal fade" id="editUser<?php echo $Id; ?>" tabindex="-1" role="dialog" aria-labelledby="editUser<?php echo $Id; ?>" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header" style="background-color: rgb(111 202 203);">
+      <div class="modal-header" style="background-color: rgb(252, 252, 119);">
         <h5 class="modal-title" id="editUser<?php echo $Id; ?>">User Id: <b><?php echo $Id; ?></b></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>

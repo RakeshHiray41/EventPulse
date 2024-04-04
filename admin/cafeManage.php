@@ -3,19 +3,31 @@
         <div class="row">
             <!-- FORM Panel -->
             <div class="col-md-4">
-                <form action="partials/_categoryManage.php" method="post" enctype="multipart/form-data">
+                <form action="partials/_cafeManage.php" method="post" enctype="multipart/form-data">
                     <div class="card">
                         <div class="card-header" style="background-color: rgb(252, 252, 119);">
-                            Create New Category
+                            Insert New Cafe
                         </div>
                         <div class="card-body">
                             <div class="form-group">
-                                <label class="control-label">Category Name: </label>
+                                <label class="control-label">Cafe Name: </label>
                                 <input type="text" class="form-control" name="name" required>
                             </div>
                             <div class="form-group">
-                                <label class="control-label">Category Desc: </label>
+                                <label class="control-label">Cafe Desc: </label>
                                 <input type="text" class="form-control" name="desc" required>
+                            </div> 
+                            <div class="form-group">
+                                <label class="control-label">Cafe Address: </label>
+                                <input type="text" class="form-control" name="address" required>
+                            </div> 
+                            <div class="form-group">
+                                <label class="control-label">Cafe Google Map Details: </label>
+                                <input type="text" class="form-control" name="map" required>
+                            </div> 
+                            <div class="form-group">
+                                <label class="control-label">Rating: </label>
+                                <input type="number" class="form-control" name="rating" required max=5 min=0 placeholder="3">
                             </div> 
                             <div class="form-group">
 								<label for="image" class="control-label">Image</label>
@@ -26,7 +38,7 @@
                         <div class="card-footer">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <button type="submit" name="createCategory" class="btn btn-sm btn-primary col-sm-3 offset-md-4"> Create </button>
+                                    <button type="submit" name="createCafe" class="btn btn-sm btn-primary col-sm-3 offset-md-4"> Create </button>
                                 </div>
                             </div>
                         </div>
@@ -44,22 +56,22 @@
                         <tr>
                             <th class="text-center" style="width:7%;">Id</th>
                             <th class="text-center">Img</th>
-                            <th class="text-center" style="width:58%;">Category Detail</th>
+                            <th class="text-center" style="width:58%;">Cafe Detail</th>
                             <th class="text-center" style="width:18%;">Action</th>
                         </tr>
                         </thead>
                         <tbody>
                         <?php 
-                            $sql = "SELECT * FROM categories"; 
+                            $sql = "SELECT * FROM caffe_list"; 
                             $result = pg_query($conn, $sql);
                             while ($row = pg_fetch_assoc($result)) {
-                                $catId = $row['categorieId'];
-                                $catName = $row['categorieName'];
-                                $catDesc = $row['categorieDesc'];
+                                $catId = $row['caffe_id'];
+                                $catName = $row['caffe_name'];
+                                $catDesc = $row['description'];
 
                                 echo '<tr>
                                         <td class="text-center"><b>' .$catId. '</b></td>
-                                        <td><img src="/img/card-'.$catId. '.jpg" alt="image for this Category" width="150px" height="150px"></td>
+                                        <td><img src="/img/cafe-'.$catId. '.jpg" alt="image for this Category" width="150px" height="150px"></td>
                                         <td>
                                             <p>Name : <b>' .$catName. '</b></p>
                                             <p>Description : <b class="truncate">' .$catDesc. '</b></p>
@@ -67,7 +79,7 @@
                                         <td class="text-center">
                                             <div class="row mx-auto" style="width:112px">
                                             <button class="btn btn-sm btn-primary edit_cat" type="button" data-toggle="modal" data-target="#updateCat' .$catId. '">Edit</button>
-                                            <form action="partials/_categoryManage.php" method="POST">
+                                            <form action="partials/_cafeManage.php" method="POST">
                                                 <button name="removeCategory" class="btn btn-sm btn-danger" style="margin-left:9px;">Delete</button>
                                                 <input type="hidden" name="catId" value="'.$catId. '">
                                             </form></div>
@@ -87,12 +99,15 @@
 
 
 <?php 
-    $catsql = "SELECT * FROM categories";
+    $catsql = "SELECT * FROM caffe_list;";
     $catResult = pg_query($conn, $catsql);
     while ($catRow = pg_fetch_assoc($catResult)) {
-        $catId = $catRow['categorieId'];
-        $catName = $catRow['categorieName'];
-        $catDesc = $catRow['categorieDesc'];
+        $catId = $catRow['caffe_id'];
+        $catName = $catRow['caffe_name'];
+        $catDesc = $catRow['description']; 
+        $address = $catRow['address']; 
+        $map = $catRow['map']; 
+        
 ?>
 
 <!-- Modal -->
@@ -100,13 +115,13 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header" style="background-color: rgb(252, 252, 119);">
-        <h5 class="modal-title" id="updateCat<?php echo $catId; ?>">Category Id: <b><?php echo $catId; ?></b></h5>
+        <h5 class="modal-title" id="updateCat<?php echo $catId; ?>">Cafe Id: <b><?php echo $catId; ?></b></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <form action="partials/_categoryManage.php" method="post" enctype="multipart/form-data">
+        <form action="partials/_cafeManage.php" method="post" enctype="multipart/form-data">
 		    <div class="text-left my-2 row" style="border-bottom: 2px solid #dee2e6;">
 		   		<div class="form-group col-md-8">
 					<b><label for="image">Image</label></b>
@@ -116,11 +131,12 @@
 					<button type="submit" class="btn btn-success my-1" name="updateCatPhoto">Update Img</button>
 				</div>
 				<div class="form-group col-md-4">
-					<img src="/img/card-<?php echo $catId; ?>.jpg" id="itemPhoto" name="itemPhoto" alt="Category image" width="100" height="100">
+					<img src="/img/cafe-<?php echo $catId; ?>.jpg" id="itemPhoto" name="itemPhoto" alt="Category image" width="100" height="100">
 				</div>
 			</div>
+
 		</form>
-        <form action="partials/_categoryManage.php" method="post">
+        <form action="partials/_cafeManage.php" method="post">
             <div class="text-left my-2">
                 <b><label for="name">Name</label></b>
                 <input class="form-control" id="name" name="name" value="<?php echo $catName; ?>" type="text" required>
@@ -128,6 +144,14 @@
             <div class="text-left my-2">
                 <b><label for="desc">Description</label></b>
                 <textarea class="form-control" id="desc" name="desc" rows="2" required minlength="6"><?php echo $catDesc; ?></textarea>
+            </div>
+            <div class="text-left my-2">
+                <b><label for="desc">Address</label></b>
+                <textarea class="form-control" id="desc" name="address" rows="2" required minlength="6"><?php echo $address; ?></textarea>
+            </div>
+            <div class="text-left my-2">
+                <b><label for="desc">Map</label></b>
+                <textarea class="form-control" id="desc" name="map" rows="2" required minlength="6"><?php echo $map; ?></textarea>
             </div>
             <input type="hidden" id="catId" name="catId" value="<?php echo $catId; ?>">
             <button type="submit" class="btn btn-success" name="updateCategory">Update</button>

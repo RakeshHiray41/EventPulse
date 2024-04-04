@@ -7,9 +7,12 @@
   --nav-width: 68px;
 
   /*===== Colors =====*/
-  --first-color: #4723D9;
+  --first-color: #07011f;
   --first-color-light: #AFA5D9;
   --white-color: #F7F6FB;
+  /* --first-color: #4723D9;
+  --first-color-light: #AFA5D9;
+  --white-color: #F7F6FB; */
   
   /*===== Font and typography =====*/
   --body-font: 'Nunito', sans-serif;

@@ -2,7 +2,7 @@
     <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModal" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <div class="modal-header" style="background-color: rgb(111 202 203);">
+          <div class="modal-header" style="background-color: rgb(252, 252, 119);">
             <h5 class="modal-title" id="signupModal">SignUp Here</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>

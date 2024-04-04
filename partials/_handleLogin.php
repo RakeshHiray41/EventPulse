@@ -5,7 +5,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $password = $_POST["loginpassword"]; 
     
    
-$sql = "SELECT * FROM users WHERE \"username\"='$username'";
+$sql = "SELECT * FROM users WHERE \"username\"='$username'  " ;
 $result = pg_query($conn, $sql);
 
 if ($result) {
@@ -21,11 +21,11 @@ if ($result) {
             header("location: /home.php?loginsuccess=true");
             exit();
         } else {
-            header("location: /home.php?loginsuccess=false");
+            header("location: /index.php?loginsuccess=false");
             exit();
         }
     } else {
-        header("location: /home.php?loginsuccess=false");
+        header("location: /index.php?loginsuccess=false");
         exit();
     }
 } else {
